@@ -8,7 +8,7 @@ import { ThemeProvider } from "next-themes";
 export function Providers({ children }: PropsWithChildren) {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <ThemeProvider attribute="class" defaultTheme="light">
         {children}
       </ThemeProvider>
     </QueryClientProvider>

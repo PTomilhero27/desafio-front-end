@@ -1,4 +1,7 @@
 import type { Config } from "tailwindcss";
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config: Config = {
   content: [
@@ -8,13 +11,38 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        light: {
+          background: "#F5F8F9", // Cor de fundo gelo
+          foreground: "#000000",
+          primary: "#1e40af", // Azul do botão
+          secondary: "#64748b", // Cinza do texto
+          card: "#ffffff", // Fundo dos cards
+          highlight: "#e2e8f0", // Cor de destaque
+        },
+        dark: {
+          background: "#0f172a", // Azul escuro para o fundo
+          foreground: "#ffffff",
+          primary: "#1e40af", // Azul do botão
+          secondary: "#64748b", // Cinza do texto
+          card: "#1e293b", // Fundo dos cards
+          highlight: "#334155", // Cor de destaque
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
 };
+
 export default config;
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
