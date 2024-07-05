@@ -2,25 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Definições padrão para o tema claro */
 :root {
-  --foreground-color: theme('colors.light.foreground');
-  --background-color: theme('colors.light.background');
-  --primary-color: theme('colors.light.primary');
-  --secondary-color: theme('colors.light.secondary');
-  --card-color: theme('colors.light.card');
-  --highlight-color: theme('colors.light.highlight');
+  --foreground-color: theme('colors.foreground');
+  --background-color: theme('colors.background');
+  --primary-color: theme('colors.primary');
+  --secondary-color: theme('colors.secondary');
+  --card-color: theme('colors.card');
+  --highlight-color: theme('colors.highlight');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-color: theme('colors.dark.foreground');
-    --background-color: theme('colors.dark.background');
-    --primary-color: theme('colors.dark.primary');
-    --secondary-color: theme('colors.dark.secondary');
-    --card-color: theme('colors.dark.card');
-    --highlight-color: theme('colors.dark.highlight');
-  }
+/* Definições para o tema escuro */
+.dark {
+  --foreground-color: theme('colors.dark.foreground');
+  --background-color: theme('colors.dark.background');
+  --primary-color: theme('colors.dark.primary');
+  --secondary-color: theme('colors.dark.secondary');
+  --card-color: theme('colors.dark.card');
+  --highlight-color: theme('colors.dark.highlight');
 }
+
 body {
   color: var(--foreground-color);
   background-color: var(--background-color);
@@ -37,5 +38,21 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  @media (min-width: 768px) {
+    .slide-in {
+      @apply duration-100 ease-in;
+      margin-left: -340px;
+      animation: slide-in 1s forwards .8s;
+    }
+
+    @keyframes slide-in {
+      to {
+        margin-left: 0;
+      }
+    }
   }
 }
