@@ -6,17 +6,18 @@ export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;
   icon?: LucideIcon;
+  classIcon?: string;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, error, icon: Icon, ...props }, ref) => {
+  ({ className, type, error, icon: Icon, classIcon, ...props }, ref) => {
     return (
       <div className="relative flex items-center w-full">
         {Icon && (
           <Icon
             width={20}
             height={20}
-            className="absolute left-3 text-muted-foreground"
+            className={`${classIcon} absolute left-3 text-muted-foreground`}
           />
         )}
         <input

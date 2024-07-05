@@ -1,5 +1,5 @@
 function Page() {
-  return <h1>DashBoard</h1>;
+  return <h1 className=" font-semibold">DashBoard</h1>;
 }
 
 export default Page;

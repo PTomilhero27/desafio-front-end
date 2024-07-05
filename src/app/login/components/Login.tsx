@@ -13,8 +13,7 @@ import {
 } from "@/components/ui/form";
 
 const Login = () => {
-  const { register, handleSubmit, errors, isSubmitting, onSubmit } =
-    useLoginForm();
+  const { register, handleSubmit, errors, onSubmit } = useLoginForm();
 
   return (
     <div className="flex h-screen w-full items-center justify-center">
