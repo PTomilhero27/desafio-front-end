@@ -11,7 +11,7 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
   const isOpen = useSidebarStore((state) => state.isOpen);
   const closeSidebar = useSidebarStore((state) => state.closeSidebar);
   const openSidebar = useSidebarStore((state) => state.openSidebar);
-  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
+  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(true);
 
   const handleResize = useCallback(() => {
     if (window.innerWidth <= 767) {

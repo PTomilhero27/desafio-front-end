@@ -40,3 +40,19 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer components {
+  @media (min-width: 768px) {
+    .slide-in {
+      @apply duration-100 ease-in;
+      margin-left: -340px;
+      animation: slide-in 1s forwards .8s;
+    }
+
+    @keyframes slide-in {
+      to {
+        margin-left: 0;
+      }
+    }
+  }
+}
