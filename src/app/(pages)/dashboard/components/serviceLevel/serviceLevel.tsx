@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import CardComponent from "@/components/card/card";
 import StackedBarChartComponent from "./stackedBarChartComponent";
@@ -20,7 +21,7 @@ const ServiceLevel: React.FC = () => {
   return (
     <CardComponent title="Realidade" description="" export={true}>
       <div className="relative flex justify-center items-center w-full h-full">
-        <div className="w-full h-full ">
+        <div data-testid="chart-container" className="w-full h-full">
           <StackedBarChartComponent data={data} bars={bars} />
         </div>
       </div>

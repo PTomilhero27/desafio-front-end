@@ -30,9 +30,10 @@ const Login = () => {
               <Input
                 id="username"
                 placeholder="Digite seu usuário"
-                className="pl-10"
+                className="pl-10 text-black"
                 error={!!errors.username}
                 icon={User}
+                classIcon="text-black"
                 {...register("username")}
               />
             </FormControl>
@@ -48,9 +49,10 @@ const Login = () => {
                 id="password"
                 type="password"
                 placeholder="Digite sua senha"
-                className="pl-10"
+                className="pl-10 text-black"
                 error={!!errors.password}
                 icon={Lock}
+                classIcon="text-black"
                 {...register("password")}
               />
             </FormControl>

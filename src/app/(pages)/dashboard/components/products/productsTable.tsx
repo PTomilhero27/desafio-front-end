@@ -27,32 +27,32 @@ const TableComponent: React.FC = () => {
         produto: "BLUE START ENF SC",
         alavancagem: 75,
         porcentagem: 45,
-        cor: "0095FF",
-        bgCor: "CDE7FF",
+        cor: "#0095FF",
+        bgCor: "#CDE7FF",
       },
       {
         id: "02",
         produto: "BLUE START ENF CO",
         alavancagem: 60,
         porcentagem: 29,
-        cor: "00E096",
-        bgCor: "8CFAC7",
+        cor: "#00E096",
+        bgCor: "#8CFAC7",
       },
       {
         id: "03",
         produto: "BLUE START APT CO",
         alavancagem: 55,
         porcentagem: 18,
-        cor: "884DFF",
-        bgCor: "C5A8FF",
+        cor: "#884DFF",
+        bgCor: "#C5A8FF",
       },
       {
         id: "04",
         produto: "BLUE START APT SC",
         alavancagem: 25,
         porcentagem: 25,
-        cor: "FF8F0D",
-        bgCor: "FFD5A4",
+        cor: "#FF8F0D",
+        bgCor: "#FFD5A4",
       },
     ],
     []
@@ -88,8 +88,8 @@ const TableComponent: React.FC = () => {
         cell: ({ getValue, row }) => (
           <div>
             <ProgressBar
-              color={`#${row.original.cor}`}
-              className={`h-1 bg-[#${row.original.bgCor}]`}
+              color={`${row.original.cor}`}
+              className={`h-1 bg-[${row.original.bgCor}]`}
               value={getValue<number>()}
             />
           </div>
@@ -97,13 +97,13 @@ const TableComponent: React.FC = () => {
       },
       {
         header: "%",
-        accessorKey: "alavancagem",
+        accessorKey: "porcentagem",
         cell: ({ row }) => {
           return (
             <div
-              className={` text-center rounded-lg bg-[#${row.original.bgCor}] border-[#${row.original.cor}] border`}
+              className={` text-center rounded-lg bg-[${row.original.bgCor}] border-[${row.original.cor}] border`}
             >
-              <span className={`text-sm text-[#${row.original.cor}]`}>
+              <span className={`text-sm text-[${row.original.cor}]`}>
                 {row.original.porcentagem}%
               </span>
             </div>
