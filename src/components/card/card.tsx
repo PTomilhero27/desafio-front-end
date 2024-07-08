@@ -10,6 +10,7 @@ import {
 } from "../ui/card";
 import { HardDriveDownload } from "lucide-react";
 import html2canvas from "html2canvas";
+import { useToast } from "../ui/toast/use-toast";
 
 interface CardComponentProps {
   title: string;
@@ -22,6 +23,7 @@ const CardComponent: React.FC<CardComponentProps> = (props) => {
   const { description, title, children, export: exportProp = false } = props;
   const cardRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const { toast } = useToast();
 
   const handleExport = async () => {
     if (cardRef.current && buttonRef.current) {
@@ -36,6 +38,12 @@ const CardComponent: React.FC<CardComponentProps> = (props) => {
       link.href = imgData;
       link.download = `${title}.png`;
       link.click();
+
+      toast({
+        variant: "success",
+        title: "",
+        description: "Imagem exportada com sucesso!",
+      });
     }
   };
 

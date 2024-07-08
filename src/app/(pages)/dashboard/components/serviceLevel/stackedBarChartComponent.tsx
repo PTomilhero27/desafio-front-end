@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { BarChart, Bar, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import { BarChart, Bar, Tooltip, ResponsiveContainer } from "recharts";
 import CustomLegend from "./customLegend";
 
 interface BarChartProps {

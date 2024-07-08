@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import "@/styles/globals.css";
 import { Providers } from "@/context/provider";
+import { Toaster } from "@/components/ui/toast/toaster";
 
 const poppins = Poppins({
   weight: ["400", "700", "500", "600"],
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={poppins.className}>
         <Providers>{children}</Providers>
+        <Toaster />
       </body>
     </html>
   );

@@ -3,10 +3,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { LoginSchema } from "./schema";
 import { useRouter } from "next/navigation";
+import { useToast } from "@/components/ui/toast/use-toast";
 
 type LoginFormData = z.infer<typeof LoginSchema>;
 
 export const useLoginForm = () => {
+  const { toast } = useToast();
+
   const {
     register,
     handleSubmit,
@@ -19,8 +22,17 @@ export const useLoginForm = () => {
   const onSubmit: SubmitHandler<LoginFormData> = (data) => {
     if (data.username === "blue" && data.password === "blue") {
       router.push("/dashboard");
+      toast({
+        variant: "success",
+        title: "Login Bem-sucedido",
+        description: "Você foi autenticado com sucesso. Bem-vindo de volta!",
+      });
     } else {
-      console.error("Erro na validação dos dados do formulário");
+      toast({
+        variant: "error",
+        title: "Erro ao Logar",
+        description: "Usuário ou senha inválidos. Por favor, tente novamente!",
+      });
     }
   };
 

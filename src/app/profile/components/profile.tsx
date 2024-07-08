@@ -50,27 +50,28 @@ const UserProfile = () => {
   };
 
   return (
-    <section className="flex justify-center items-center min-h-screen bg-gray-100">
+    <section className="flex justify-center items-center min-h-screen ">
       <div className="container max-w-2xl bg-white p-8 shadow-lg rounded-lg">
-        <ArrowLeft
-          className="mb-4 cursor-pointer"
-          onClick={handleBackClick}
-          width={20}
-          height={20}
-        />
+        <button onClick={handleBackClick} aria-label="Voltar">
+          <ArrowLeft
+            className="mb-4 text-black cursor-pointer"
+            width={20}
+            height={20}
+          />
+        </button>
         <div className="card">
-          <h2 className="text-2xl font-bold">{`${user.firstName} ${user.lastName}`}</h2>
+          <h2 className="text-2xl text-black font-bold">{`${user.firstName} ${user.lastName}`}</h2>
           <h4 className="text-lg text-gray-600">{user.jobTitle}</h4>
           <div className="user-info flex items-center mt-4">
             <div className="user-details ml-6">
               <div className="content-group mb-4">
-                <h3 className="font-semibold">E-mail:</h3>
+                <h3 className="font-semibold text-black">E-mail:</h3>
                 <a href={`mailto:${user.email}`} className="text-blue-500">
                   <p>{user.email}</p>
                 </a>
               </div>
 
-              <div className="content-group mb-4">
+              <div className="content-group mb-4 text-black">
                 <h3 className="font-semibold">Telefone:</h3>
                 <a
                   href={`https://wa.me/${getWhatsAppLink(user.phone)}`}
@@ -83,8 +84,11 @@ const UserProfile = () => {
               </div>
 
               <div className="content-group mb-4">
-                <h3 className="font-semibold">Sobre:</h3>
-                <div dangerouslySetInnerHTML={{ __html: user.about }}></div>
+                <h3 className="font-semibold text-black">Sobre:</h3>
+                <div
+                  className="text-black"
+                  dangerouslySetInnerHTML={{ __html: user.about }}
+                ></div>
               </div>
               <div className="flex items-center gap-4 mt-4">
                 <Image
