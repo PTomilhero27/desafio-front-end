@@ -1,3 +1,4 @@
+"use client";
 import { CardSideBarIcon } from "@/assets/cardSideBarIcon";
 import { Button } from "@/components/ui/button";
 import { FC } from "react";
