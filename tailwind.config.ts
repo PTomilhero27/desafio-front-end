@@ -4,6 +4,7 @@ const {
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,22 +13,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        light: {
-          background: "#F5F8F9", // Cor de fundo gelo
-          foreground: "#000000",
-          primary: "#1e40af", // Azul do botão
-          secondary: "#64748b", // Cinza do texto
-          card: "#ffffff", // Fundo dos cards
-          highlight: "#e2e8f0", // Cor de destaque
-        },
+        background: "#F5F8F9",
+        foreground: "#000000",
+        primary: "#3b49df",
+        secondary: "#64748b",
+        title: "#151D48",
+        card: "#ffffff",
+        highlight: "#e2e8f0",
         dark: {
-          background: "#0f172a", // Azul escuro para o fundo
+          background: "#0f172a",
           foreground: "#ffffff",
-          primary: "#1e40af", // Azul do botão
-          secondary: "#64748b", // Cinza do texto
-          card: "#1e293b", // Fundo dos cards
-          highlight: "#334155", // Cor de destaque
+          primary: "#3b49df",
+          title: "#151D48",
+          secondary: "#64748b",
+          card: "#1e293b",
+          highlight: "#334155",
         },
+      },
+      fontFamily: {
+        sans: ["var(--font-poppins)"],
       },
     },
   },
