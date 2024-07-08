@@ -17,7 +17,7 @@ export const useLoginForm = () => {
   const router = useRouter();
 
   const onSubmit: SubmitHandler<LoginFormData> = (data) => {
-    if (data) {
+    if (data.username === "blue" && data.password === "blue") {
       router.push("/dashboard");
     } else {
       console.error("Erro na validação dos dados do formulário");

@@ -36,11 +36,11 @@ const AvatarMenu = () => {
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="mt-2 w-48 bg-white shadow-lg rounded-md p-2">
-        <DropdownMenuItem className="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-md cursor-pointer">
+        <DropdownMenuItem
+          onClick={() => router.push("/profile")}
+          className="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-md cursor-pointer"
+        >
           Perfil
-        </DropdownMenuItem>
-        <DropdownMenuItem className="flex items-center p-2 text-gray-700 hover:bg-gray-100 rounded-md cursor-pointer">
-          Configurações
         </DropdownMenuItem>
         <DropdownMenuSeparator className="my-2 border-t border-gray-200" />
         <DropdownMenuItem

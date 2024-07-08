@@ -18,7 +18,7 @@ const Login = () => {
   return (
     <div className="flex h-screen w-full items-center justify-center">
       <BackgroundBeams />
-      <div className="mx-auto w-full max-w-md space-y-6 rounded-lg border bg-card p-6 shadow-lg sm:p-8">
+      <div className="mx-auto z-10 w-full max-w-md space-y-6 rounded-lg border bg-card p-6 shadow-lg sm:p-8">
         <div className="flex flex-col items-center space-y-2">
           <Box width={48} height={48} className="text-primary" />
           <h1 className="text-2xl font-bold">Bem-vindo ao Blue</h1>

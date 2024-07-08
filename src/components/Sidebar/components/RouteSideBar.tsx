@@ -1,8 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import RouteButton from "./RouteButton";
 import { BarChart2 } from "lucide-react";
 import { DashboardIcon } from "@/assets/dashboardIcon";
+
 interface Route {
   text: string;
   icon: React.ReactNode;
@@ -10,11 +12,14 @@ interface Route {
 }
 
 const RouteSideBar: React.FC = () => {
+  const router = useRouter();
+  const pathname = usePathname(); // Hook para pegar o pathname atual
+
   const initialRoutes: Route[] = [
     {
       text: "Dashboard",
       icon: <DashboardIcon width={25} height={25} />,
-      active: true,
+      active: false,
     },
     {
       text: "Leaderboard",
@@ -25,14 +30,23 @@ const RouteSideBar: React.FC = () => {
 
   const [routes, setRoutes] = useState<Route[]>(initialRoutes);
 
-  const handleRouteClick = (routeText: string) => {
+  // Atualiza os botões ativos conforme a rota atual
+  useEffect(() => {
+    const path = pathname.slice(1); // Remove a barra inicial
     setRoutes((prevRoutes) =>
       prevRoutes.map((route) =>
-        route.text === routeText
+        route.text.toLowerCase() === path.toLowerCase()
           ? { ...route, active: true }
           : { ...route, active: false }
       )
     );
+  }, [pathname]);
+
+  const handleRouteClick = (routeText: string) => {
+    const lowerCaseText = routeText.toLowerCase();
+    const targetPath = `/${lowerCaseText}`;
+
+    router.push(targetPath);
   };
 
   return (
@@ -41,7 +55,7 @@ const RouteSideBar: React.FC = () => {
         <RouteButton
           key={route.text}
           route={route}
-          onClick={handleRouteClick}
+          onClick={() => handleRouteClick(route.text)}
         />
       ))}
     </div>

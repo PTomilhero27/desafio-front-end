@@ -1,5 +1,6 @@
 "use client";
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import SearchBar from "./SearchBar";
 import AvatarMenu from "./AvatarMenu";
 import NotificationIcon from "./NotificationIcon";
@@ -9,12 +10,25 @@ import useSidebarStore from "@/store/sidebarStore";
 
 const HeaderContainer: FC = () => {
   const toggleSidebar = useSidebarStore((state) => state.toggleSidebar);
+  const router = useRouter();
+  const [title, setTitle] = useState("Dashboard");
+
+  useEffect(() => {
+    if (router) {
+      const path = window.location.pathname;
+      if (path === "/leaderboard") {
+        setTitle("Leaderboard");
+      } else {
+        setTitle("Dashboard");
+      }
+    }
+  }, [router]);
 
   return (
     <header className="flex items-center w-full justify-between p-4 bg-white shadow flex-row ">
       <div className="flex items-center justify-between w-full md:w-auto">
-        <h1 className="text-2xl font-bold md:flex hidden text-gray-800">
-          Dashboard
+        <h1 className="text-2xl font-bold md:flex hidden text-title">
+          {title}
         </h1>
         <button
           className="md:hidden block text-gray-800 focus:outline-none"
