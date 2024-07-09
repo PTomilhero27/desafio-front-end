@@ -1,7 +1,9 @@
 import { Poppins } from "next/font/google";
 import "@/styles/globals.css";
-import { Providers } from "@/context/provider";
 import { Toaster } from "@/components/ui/toast/toaster";
+import { Providers } from "@/context/provider";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 const poppins = Poppins({
   weight: ["400", "700", "500", "600"],
@@ -10,17 +12,29 @@ const poppins = Poppins({
   fallback: ["system-ui", "sans-serif"],
 });
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+const RootLayout = async ({ children }: RootLayoutProps) => {
+  const cookieStore = cookies();
+  const locale = cookieStore.get("NEXT_LOCALE")?.value || "pt";
+  const namespaces = ["common"];
+
+  if (!["en", "es", "pt"].includes(locale)) {
+    redirect(`/${"pt"}`);
+  }
+
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={poppins.className}>
-        <Providers>{children}</Providers>
+        <Providers locale={locale} namespaces={namespaces}>
+          {children}
+        </Providers>
         <Toaster />
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

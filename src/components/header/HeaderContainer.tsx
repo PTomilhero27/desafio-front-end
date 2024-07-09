@@ -1,42 +1,14 @@
-"use client";
-import { FC, useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { FC } from "react";
 import SearchBar from "./SearchBar";
 import AvatarMenu from "./AvatarMenu";
 import NotificationIcon from "./NotificationIcon";
 import LanguageMenu from "./LanguageMenu";
-import { Menu } from "lucide-react";
-import useSidebarStore from "@/store/sidebarStore";
+import HeaderTitle from "./headerTitle";
 
 const HeaderContainer: FC = () => {
-  const toggleSidebar = useSidebarStore((state) => state.toggleSidebar);
-  const router = useRouter();
-  const [title, setTitle] = useState("Dashboard");
-
-  useEffect(() => {
-    if (router) {
-      const path = window.location.pathname;
-      if (path === "/leaderboard") {
-        setTitle("Leaderboard");
-      } else {
-        setTitle("Dashboard");
-      }
-    }
-  }, [router]);
-
   return (
     <header className="flex items-center w-full justify-between p-4 bg-white shadow flex-row ">
-      <div className="flex items-center justify-between w-full md:w-auto">
-        <h1 className="text-2xl font-bold md:flex hidden text-title">
-          {title}
-        </h1>
-        <button
-          className="md:hidden block text-gray-800 focus:outline-none"
-          onClick={toggleSidebar}
-        >
-          <Menu className="h-6 w-6" />
-        </button>
-      </div>
+      <HeaderTitle />
       <div className="items-center justify-end space-x-4 flex flex-row gap-4 w-full">
         <div className={`gap-4 hidden  lg:flex`}>
           <SearchBar />
