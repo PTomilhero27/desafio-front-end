@@ -18,7 +18,7 @@ const InfoCard: FC<InfoCardProps> = ({ title, description, buttonText }) => {
     <div className="relative bg-primary text-white rounded-lg p-4 flex flex-col items-center space-y-4 ">
       <CardSideBarIcon className="z-10" width={50} height={50} />
       <h2 className="text-xl text-center font-medium">{title}</h2>
-      <p className="text-center text-xs text-dark-secondary">{description}</p>
+      <p className="text-center text-xs text-gray-400">{description}</p>
       <Button
         onClick={handleClick}
         className="z-10 bg-white font-bold text-dark-primary w-32 text-base px-4 py-2"
