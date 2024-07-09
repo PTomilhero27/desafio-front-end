@@ -20,9 +20,11 @@ export function middleware(request: NextRequest) {
   const currentLocale = locales.find((locale) =>
     pathname.startsWith(`/${locale}`)
   );
-
   const validRoutes = ["dashboard", "leaderboard", "profile", "login"];
-  const route = pathname.split("/")[2];
+
+  const route = currentLocale
+    ? pathname.split("/").slice(2, 3)[0]
+    : pathname.split("/").slice(1, 2)[0];
 
   if (!validRoutes.includes(route)) {
     nextUrl.pathname = `/${cookieLocale}/login`;
