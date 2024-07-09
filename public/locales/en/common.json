@@ -1,0 +1,134 @@
+{
+  "dashboard": {
+    "salesTable": {
+      "id": "#",
+      "sellerName": "Seller Name",
+      "totalSales": "Total Sales"
+    },
+    "serviceLevel": {
+      "title": "Service Level",
+      "months": {
+        "Jan": "Jan",
+        "Feb": "Feb",
+        "Mar": "Mar",
+        "Apr": "Apr",
+        "May": "May",
+        "Jun": "Jun"
+      },
+      "bars": {
+        "Expectation": "Expectation",
+        "Reality": "Reality"
+      }
+    },
+    "salesMap": {
+      "mapping": {
+        "title": "Sales mapping by state"
+      }
+    },
+    "products": {
+      "title": "Top Products",
+      "columns": {
+        "id": "#",
+        "product": "Product",
+        "leverage": "Leverage",
+        "percentage": "%"
+      }
+    },
+    "realityChart": {
+      "title": "Reality",
+      "months": {
+        "Jan": "Jan",
+        "Feb": "Feb",
+        "Mar": "Mar",
+        "Apr": "Apr",
+        "May": "May",
+        "Jun": "Jun",
+        "Jul": "Jul"
+      },
+      "bars": {
+        "Finalized": "Completed contracts",
+        "Pending": "Pending"
+      }
+    },
+    "lifeChart": {
+      "title": "Lives",
+      "months": {
+        "Jan": "Jan",
+        "Feb": "Feb",
+        "Mar": "Mar",
+        "Apr": "Apr",
+        "May": "May",
+        "Jun": "Jun"
+      },
+      "lines": {
+        "lastMonth": "Last month",
+        "thisMonth": "This month"
+      }
+    },
+    "performance": {
+      "title": "Total Performance",
+      "days": {
+        "Segunda": "Monday",
+        "Terça": "Tuesday",
+        "Quarta": "Wednesday",
+        "Quinta": "Thursday",
+        "Sexta": "Friday",
+        "Sábado": "Saturday",
+        "Domingo": "Sunday"
+      },
+      "status": {
+        "Aguardando": "Pending",
+        "Implantadas": "Implemented"
+      }
+    },
+    "platforms": {
+      "title": "Platforms",
+      "TD": "TD Consulting",
+      "RIKO": "RIKO Platform",
+      "Blue": "Blue Services",
+      "months": {
+        "Jan": "Jan",
+        "Fev": "Feb",
+        "Mar": "Mar",
+        "Abr": "Apr",
+        "Mai": "May",
+        "Jun": "Jun",
+        "Jul": "Jul",
+        "Ago": "Aug",
+        "Set": "Sep",
+        "Nov": "Nov",
+        "Dez": "Dec"
+      }
+    },
+    "sales": {
+      "sales_today": "Sales Today",
+      "sales_summary": "Sales Summary",
+      "total_sales": "Total Sales",
+      "total_contracts": "Total Contracts",
+      "implemented": "Implemented",
+      "new_contracts": "New Contracts",
+      "more_than_yesterday": "{{value}} more than yesterday"
+    }
+  },
+  "sidebar": {
+    "cardInfo": {
+      "title": "Get to Know Blue",
+      "description": "Learn more about Blue, a Health Tech health operator.",
+      "buttonText": "Learn More"
+    }
+  },
+  "login": {
+    "title": "Welcome to Blue",
+    "username": "Username",
+    "username_placeholder": "Enter your username",
+    "username_required": "Username is required",
+    "password": "Password",
+    "password_placeholder": "Enter your password",
+    "password_required": "Password must be at least 3 characters",
+    "login_button": "Login",
+    "success_message": "Login Successful",
+    "success_description": "You have been successfully authenticated. Welcome back!",
+    "error_message": "Login Error",
+    "error_description": "Invalid username or password. Please try again!"
+  }
+}

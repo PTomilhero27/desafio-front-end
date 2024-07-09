@@ -13,8 +13,7 @@ interface Route {
 
 const RouteSideBar: React.FC = () => {
   const router = useRouter();
-  const pathname = usePathname(); // Hook para pegar o pathname atual
-
+  const pathname = usePathname();
   const initialRoutes: Route[] = [
     {
       text: "Dashboard",
@@ -30,12 +29,10 @@ const RouteSideBar: React.FC = () => {
 
   const [routes, setRoutes] = useState<Route[]>(initialRoutes);
 
-  // Atualiza os botões ativos conforme a rota atual
   useEffect(() => {
-    const path = pathname.slice(1); // Remove a barra inicial
     setRoutes((prevRoutes) =>
       prevRoutes.map((route) =>
-        route.text.toLowerCase() === path.toLowerCase()
+        pathname.includes(route.text.toLowerCase())
           ? { ...route, active: true }
           : { ...route, active: false }
       )

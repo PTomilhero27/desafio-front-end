@@ -1,0 +1,134 @@
+{
+  "dashboard": {
+    "salesTable": {
+      "id": "#",
+      "sellerName": "Nombre del Vendedor",
+      "totalSales": "Total de Ventas"
+    },
+    "serviceLevel": {
+      "title": "Nivel de servicio",
+      "months": {
+        "Jan": "Ene",
+        "Feb": "Feb",
+        "Mar": "Mar",
+        "Apr": "Abr",
+        "May": "May",
+        "Jun": "Jun"
+      },
+      "bars": {
+        "Expectation": "Expectativa",
+        "Reality": "Realidad"
+      }
+    },
+    "salesMap": {
+      "mapping": {
+        "title": "Mapeo de ventas por estado"
+      }
+    },
+    "products": {
+      "title": "Productos principales",
+      "columns": {
+        "id": "#",
+        "product": "Producto",
+        "leverage": "Apalancamiento",
+        "percentage": "%"
+      }
+    },
+    "realityChart": {
+      "title": "Realidad",
+      "months": {
+        "Jan": "Ene",
+        "Feb": "Feb",
+        "Mar": "Mar",
+        "Apr": "Abr",
+        "May": "May",
+        "Jun": "Jun",
+        "Jul": "Jul"
+      },
+      "bars": {
+        "Finalized": "Contratos finalizados",
+        "Pending": "Pendiente"
+      }
+    },
+    "lifeChart": {
+      "title": "Vidas",
+      "months": {
+        "Jan": "Ene",
+        "Feb": "Feb",
+        "Mar": "Mar",
+        "Apr": "Abr",
+        "May": "May",
+        "Jun": "Jun"
+      },
+      "lines": {
+        "lastMonth": "Último mes",
+        "thisMonth": "Este mes"
+      }
+    },
+    "performance": {
+      "title": "Rendimiento total",
+      "days": {
+        "Segunda": "Lunes",
+        "Terça": "Martes",
+        "Quarta": "Miércoles",
+        "Quinta": "Jueves",
+        "Sexta": "Viernes",
+        "Sábado": "Sábado",
+        "Domingo": "Domingo"
+      },
+      "status": {
+        "Aguardando": "Pendiente",
+        "Implantadas": "Implementado"
+      }
+    },
+    "platforms": {
+      "title": "Plataformas",
+      "TD": "TD Consultoría",
+      "RIKO": "Plataforma RIKO",
+      "Blue": "Servicios Blue",
+      "months": {
+        "Jan": "Ene",
+        "Fev": "Feb",
+        "Mar": "Mar",
+        "Abr": "Abr",
+        "Mai": "May",
+        "Jun": "Jun",
+        "Jul": "Jul",
+        "Ago": "Ago",
+        "Set": "Sep",
+        "Nov": "Nov",
+        "Dez": "Dic"
+      }
+    },
+    "sales": {
+      "sales_today": "Ventas Hoy",
+      "sales_summary": "Resumen de Ventas",
+      "total_sales": "Ventas Totales",
+      "total_contracts": "Contratos Totales",
+      "implemented": "Implementados",
+      "new_contracts": "Nuevos Contratos",
+      "more_than_yesterday": "{{value}} más que ayer"
+    }
+  },
+  "sidebar": {
+    "cardInfo": {
+      "title": "Conoce Blue",
+      "description": "Obtén más información sobre Blue, una operadora de salud Health Tech.",
+      "buttonText": "Conocer"
+    }
+  },
+  "login": {
+    "title": "Bienvenido a Blue",
+    "username": "Nombre de usuario",
+    "username_placeholder": "Ingrese su nombre de usuario",
+    "username_required": "El nombre de usuario es obligatorio",
+    "password": "Contraseña",
+    "password_placeholder": "Ingrese su contraseña",
+    "password_required": "La contraseña debe tener al menos 3 caracteres",
+    "login_button": "Iniciar sesión",
+    "success_message": "Inicio de sesión exitoso",
+    "success_description": "Has sido autenticado con éxito. ¡Bienvenido de nuevo!",
+    "error_message": "Error de inicio de sesión",
+    "error_description": "Nombre de usuario o contraseña inválidos. ¡Por favor, inténtelo de nuevo!"
+  }
+}
